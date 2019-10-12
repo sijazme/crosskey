@@ -1,0 +1,177 @@
+<html>
+  <head>
+    <title> ToDo App </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100"     rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+	
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+<body>
+
+<script>
+	$( document ).ready(function() {
+
+	    $("#newtask").focus();
+
+		$('a[id^="a_mark"]').on("click", function(e){
+
+				var index = $(e.target).attr('name');
+				
+				  $.ajax({
+								method: 'GET',
+								url: '/marktask',
+								cache: true,
+								data: { i: index },
+								success: function(result) {
+									 //alert("success");
+									 location = '/';
+								}
+							  });
+				 
+					//$("#newtask").focus();
+					return false;
+
+		});
+
+	   
+	  $('a[id^="a_del"]').on("click", function(e){
+
+				var index = $(e.target).attr('name');
+				
+				  $.ajax({
+								method: 'GET',
+								url: '/removetask',
+								cache: true,
+								data: { i: index },
+								success: function(result) {
+									//alert("delete success");
+									 location = '/';
+								}
+							  });
+				 
+					//$("#newtask").focus();
+					return false;
+
+		});
+		
+		$('p[id^="p_input"]').keydown(function(e) {
+			 if(e.which == 13) {
+					
+					var index = $(e.target).attr('name');
+					var text = $.trim( $(e.target).text() );
+
+					 
+					     $.ajax({
+								method: 'POST',
+								url: '/updatetask',
+								data: { i: index, value: text },
+								success: function(result) {
+									 //alert("success");
+								}
+							  });
+
+					$("#newtask").focus();
+					return false;
+				
+				}
+		})
+
+		
+
+		 $("#newtask").keydown(function(e) {
+			 if(e.which == 13) {
+					
+
+					var input = $("#newtask");
+					input[0].selectionStart = 0;
+
+					input.focus();
+
+					return true;
+				}
+		})
+   
+	});
+
+
+	
+
+</script>
+
+
+  <div style="float:left">  
+      <img src='https://www.crosskey.fi/wp-content/themes/roots-sass-master/assets/img/logo-footer.svg'></img>	 
+  </div>
+
+  <br /> <br / ><br / >
+  <div>
+
+  <div style="float:left; margin-top:10px">
+      <img width="100px" height="100px" src='https://cdn2.iconfinder.com/data/icons/flat-productivity-at-work/256/To-Do_List-512.png'></img>	  
+  </div>
+  
+  <div class="container" >
+     <div class="heading"> Todo List </div> 
+	 <br/>
+	
+	<form id="addtask" action ="/addtask" method="POST">
+
+				<ul id="tasklist">
+
+				 <% for( var i = 0; i < task.length; i++){ %>
+						<li> 
+						
+						  <div id="grid">
+								<div><a id="a_mark" name="<%=[i]%>" class="circle"></a></div>
+								 <div>
+								   <p contenteditable="true" name="<%=[i]%>" id="p_input<%=[i]%>" >							 
+								     <input  type="hidden" id="textinput<%=[i]%>" name="check" value="<%= task[i] %>" /> <%= task[i] %>
+							        </p>
+								  </div>
+								 <div>
+									  <a style="color:lightgrey" id="a_del<%=[i]%>" name="<%=[i]%>" onmouseover="this.style.color='orange';" onmouseout="this.style.color='lightgrey';">
+										 <i name="<%=[i]%>" class="fa fa-trash-o" style="font-size:20px; " title="delete task"></i>
+									 </a>
+								</div>
+								
+						</div>
+											 
+						</li>
+						<li class="break">
+					      <hr size="1">	
+						</li>
+
+				 <% } %>
+
+				 </ul>
+
+				 <br />
+
+				  <table>
+					<tr>
+						<td> <input id="newtask"  name="newtask" type="text" size="120" maxlength="100"  placeholder=" define task here e.g. wash dishes PRESS ENTER  ">  </td>						
+				    </tr>
+					<tr>
+				        
+					</tr>
+					</table>
+
+			</form>
+  
+				<h3> Completed tasks </h3>
+
+				<ul>
+ 
+				<% for(var i = 0; i < complete.length; i++){ %>
+				  <li><%= complete[i] %> </li>
+			<% } %>
+
+			</ul>
+	
+	    </div>
+		
+</div>
+</body>
+</html>

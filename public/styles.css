@@ -1,0 +1,131 @@
+* {
+    font-family: "lato", sans-serif;
+    font-weight: bold;
+}
+
+body {
+    background: rgb(82, 82, 82);
+    color: white;
+    margin-top: 20px;
+    font-weight:bold;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 4% 90% 5%;
+    
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    float: left;
+    background-color: #242424;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.heading{
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-weight: bold;
+    list-style-type: none;
+    -webkit-padding-start: 0;
+    
+}
+
+li {
+   
+    display: block;
+}
+
+.circle {
+    width: 18px;
+    height: 18px;
+    background-color: azure;
+    border-radius: 50%;   
+    float:left;
+    margin-top:9px;
+}
+
+.circle:hover {
+    background-color: lightgreen;
+}
+
+p:hover {
+    
+}
+
+p {
+    color: white;
+    float: left;
+    padding: 5px;
+    margin: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75ch;
+}
+
+input[type="text"], textarea {
+    background-color: rgb(33, 33, 33);
+    color: rgb(255, 255, 255);
+    border: 1px solid #00b0b9;
+    font-weight: bold;
+    padding: 10px;
+}
+
+hr {
+    border-top: 1px solid rgb(141, 141, 141);
+}
+
+.fa {
+    font-size: 16px;
+    transition: .5s ease-in-out;
+    margin-top:3px;
+}
+
+
+.fa.fa-trash-o:hover + .tooltip-text, .fa.fa-list:hover + .tooltip-text, .fa.fa-pencil:hover + .tooltip-text {
+    display: block;
+    
+    animation: fadeIn 1s;
+}
+
+.break {
+    width: 100%;
+    clear: both;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
