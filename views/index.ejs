@@ -84,12 +84,20 @@
 			 if(e.which == 13) {
 					
 
-					var input = $("#newtask");
-					input[0].selectionStart = 0;
+					if($(this).val().length <= 0) 
+					{
+					   return false;						
+					} 
+					
+					else {
 
-					input.focus();
-
-					return true;
+					   var input = $(this);
+					   input[0].selectionStart = 0;					
+					   $(this).focus();
+					   return true;
+						 
+					}
+					
 				}
 		})
    
