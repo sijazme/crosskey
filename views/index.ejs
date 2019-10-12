@@ -148,19 +148,21 @@
 				 </ul>
 
 				 <br />
-    			  <input id="newtask"  name="newtask" type="text"  style='width:48em'  maxlength="100"  placeholder=" define task here e.g. wash dishes PRESS ENTER  ">
+    			  <input id="newtask"  name="newtask" type="text"  style='width:48em'  maxlength="60"  placeholder=" define task here e.g. wash dishes PRESS ENTER  ">
 					
 			</form>
   
 				<h3> Completed tasks </h3>
 
-				<ul>
+				<p style='word-break: break-all'>
+						<ul >
  
-				<% for(var i = 0; i < complete.length; i++){ %>
-				  <li><%= complete[i] %> </li>
-			<% } %>
+						  <% for(var i = 0; i < complete.length; i++){ %>
+								 <li ><%= complete[i] %> </li>
+							<% } %>
 
-			</ul>
+					</ul>
+			    </p>
 	
 	    </div>
 		
