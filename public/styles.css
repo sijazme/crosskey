@@ -55,10 +55,10 @@ li {
 .circle {
     width: 18px;
     height: 18px;
-    background-color: azure;
-    border-radius: 50%;   
-    float:left;
-    margin-top:9px;
+    background-color: #fde577;
+    border-radius: 50%;
+    float: left;
+    margin-top: 9px;
 }
 
 .circle:hover {
