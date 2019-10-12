@@ -126,13 +126,13 @@
 						  <div id="grid">
 								<div><a id="a_mark" name="<%=[i]%>" class="circle"></a></div>
 								 <div>
-								   <p contenteditable="true" name="<%=[i]%>" id="p_input<%=[i]%>" >							 
+								   <p style='word-break: break-all' contenteditable="true" name="<%=[i]%>" id="p_input<%=[i]%>" >							 
 								     <input  type="hidden" id="textinput<%=[i]%>" name="check" value="<%= task[i] %>" /> <%= task[i] %>
 							        </p>
 								  </div>
 								 <div>
 									  <a style="color:lightgrey" id="a_del<%=[i]%>" name="<%=[i]%>" onmouseover="this.style.color='orange';" onmouseout="this.style.color='lightgrey';">
-										 <i name="<%=[i]%>" class="fa fa-trash-o" style="font-size:20px; " title="delete task"></i>
+										 <i name="<%=[i]%>" class="fa fa-trash-o" style="font-size:20px; cursor: pointer; " title="delete task"></i>
 									 </a>
 								</div>
 								
@@ -154,7 +154,7 @@
   
 				<h3> Completed tasks </h3>
 
-				<p style='word-break: break-all'>
+				<div style='word-break: break-all'>
 						<ul >
  
 						  <% for(var i = 0; i < complete.length; i++){ %>
@@ -162,7 +162,7 @@
 							<% } %>
 
 					</ul>
-			    </p>
+			    </div>
 	
 	    </div>
 		
