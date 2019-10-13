@@ -4,7 +4,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100"     rel="stylesheet">
     <link href="/styles.css" rel="stylesheet">
 	
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href = "https://code.jquery.com/ui/1.11.1themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src = "https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
@@ -13,7 +17,7 @@
 <script>
 	$( document ).ready(function() {
 
-	    $("#newtask").focus();
+		// $("#tasklist").sortable();
 
 		$('a[id^="a_mark"]').on("click", function(e){
 
@@ -103,12 +107,7 @@
    
 	});
 
-
-	
-
 </script>
-
-
   <div style="float:left">  
       <img src='https://www.crosskey.fi/wp-content/themes/roots-sass-master/assets/img/logo-footer.svg'></img>	 
   </div>
@@ -126,10 +125,10 @@
 	
 	<form id="addtask" action ="/addtask" method="POST">
 
-				<ul id="tasklist">
+				<ul >
 
 				 <% for( var i = 0; i < task.length; i++){ %>
-						<li> 
+						<li class = "default"> 
 						
 						  <div id="grid">
 								<div><a id="a_mark" name="<%=[i]%>" class="circle"></a></div>
@@ -142,21 +141,18 @@
 									  <a style="color:lightgrey" id="a_del<%=[i]%>" name="<%=[i]%>" onmouseover="this.style.color='orange';" onmouseout="this.style.color='lightgrey';">
 										 <i name="<%=[i]%>" class="fa fa-trash-o" style="font-size:20px; cursor: pointer; " title="delete task"></i>
 									 </a>
-								</div>
-								
-						</div>
-											 
+								</div>								
+						  </div>			 
 						</li>
-						<li class="break">
-					      <hr size="1">	
-						</li>
-
+						
+						<hr style='margin-top:3px' size="1">
 				 <% } %>
 
 				 </ul>
 
-				 <br />
-    			  <input id="newtask"  name="newtask" type="text"  style='width:48em'  maxlength="60"  placeholder=" define task here e.g. wash dishes PRESS ENTER  ">
+				   <br />
+
+    			  <input id="newtask"  name="newtask" type="text"  class="input-res"  maxlength="60"  placeholder=" define task here e.g. wash dishes PRESS ENTER  ">
 					
 			</form>
   

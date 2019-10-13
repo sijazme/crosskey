@@ -1,2 +1,0 @@
-C:\Users\ijazs\source\repos\todo-app\todo-app\obj\Debug\todo-app.njsprojAssemblyReference.cache
-C:\Users\ijazs\source\repos\todo-app\todo-app\bin\Microsoft.NodejsTools.WebRole.dll

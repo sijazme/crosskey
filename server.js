@@ -8,7 +8,6 @@ var task = ["buy socks", "go to gym"];
 
 var complete = ["cook meal"];
 
-
 var app = express();
 
 var port = process.env.PORT || 8080;
@@ -42,7 +41,7 @@ app.post('/updatetask', function (req, res) {
     var index = parseInt(req.body.i);
     var value = req.body.value;
     task[index] = value;
-    console.log(task[index]);
+    
     res.redirect("/");
 });
 

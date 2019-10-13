@@ -3,6 +3,22 @@
     font-weight: bold;
 }
 
+#tasklist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+#tasklist li {
+ 
+}
+
+.default {
+
+}
+
 body {
     background: rgb(82, 82, 82);
     color: white;
@@ -51,6 +67,7 @@ li {
    
     display: block;
 }
+
 
 .circle {
     width: 18px;
@@ -110,6 +127,32 @@ hr {
     width: 100%;
     clear: both;
 }
+
+.block {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 50px 30px;
+}
+
+.input-res {
+    -webkit-appearance: none;
+    -moz-appearance: none;    
+    font: 15px/1 'Open Sans', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    max-width: 500px;
+    background-color: #ddd;
+    border: none;
+    padding: 10px 11px 11px 11px;
+    border-radius: 3px;
+    box-shadow: none;
+    outline: none;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 
 @-webkit-keyframes fadeIn {
     from {
